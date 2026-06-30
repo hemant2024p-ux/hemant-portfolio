@@ -1,0 +1,79 @@
+<footer>
+    <div class="footer-bg">
+        <div class="footer-pattern"></div>
+        <div class="container">
+            <div class="row justify-content-center position-relative">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="footer-left-block">
+                        <a class="mb-3 d-inline-block" href="index.shtml">
+                            <span class="site-logo-text footer-logo">&lt;HS /&gt;</span>
+                        </a>
+                        <p>Creative and user-centric UI/UX Designer with 4+ years of experience in designing responsive, accessible, and aesthetically engaging digital products across web and mobile platforms.</p>
+                        <div class="get-social mt-4">
+                            <a href="https://www.linkedin.com/in/hemant-srivastava-88ba86167/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/hemant2024p-ux" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="mailto:hemant.2024p@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <h2 class="foot-head text-white">Quick Links</h2>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="footer-links useful-links">
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#skills">Skills</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="footer-links useful-links">
+
+                                <li><a href="#experience">Experience</a></li>
+                                <li><a href="#projects">Projects</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4  col-lg-4  col-md-12">
+                    <h2 class="foot-head text-white mt-3 mt-md-0">Contact Info</h2>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i><span><a href="https://maps.google.com/?q=Patna+India" target="_blank">Patna, India</a></span></li>
+                        <li><i class="fas fa-phone"></i><span><a href="tel:9992218722">+91 9992218722</a></span></li>
+                        <li><i class="fas fa-envelope"></i><span><a href="mailto:hemant.2024p@gmail.com">hemant.2024p@gmail.com</a></span></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright-bg">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <div class="copyright-l mb-3 mb-md-0">
+                        <p class="m-0">&copy;
+                            <script>document.write(/\d{4}/.exec(Date())[0])</script> <strong>Hemant Srivastava</strong> — Crafting digital experiences that matter. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="copyright-r">
+                        <p class="m-0">Designed with <i class="fas fa-heart text-danger"></i> &amp; <i class="fas fa-mug-hot"></i> by <a class="text-white fw-semibold" href="#home">Hemant</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<span class="scroll-to-top cursor-pointer fade"><i class="fal fa-long-arrow-up"></i> </span>
+<script src="js/jquery-3.7.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/common.js"></script>
+
+</body>
+
+</html>

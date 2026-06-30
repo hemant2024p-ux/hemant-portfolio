@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hemant Srivastava | UI/UX Designer Portfolio</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css)" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css)" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap)" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #121933;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text: #e9ecf1;
+      --muted: #aab2c8;
+      --primary: #6c63ff;
+      --primary-2: #8b5cf6;
+      --accent: #22d3ee;
+      --success: #34d399;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(108, 99, 255, 0.20), transparent 30%),
+        radial-gradient(circle at top right, rgba(34, 211, 238, 0.16), transparent 28%),
+        linear-gradient(135deg, #0b1020 0%, #0f172a 50%, #111827 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .section-padding {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 45px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .navbar {
+      background: rgba(11, 16, 32, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #fff !important;
+      letter-spacing: 0.4px;
+    }
+
+    .navbar-brand span {
+      color: var(--accent);
+    }
+
+    .nav-link {
+      color: #dbe3f0 !important;
+      font-weight: 500;
+      margin-left: 10px;
+      transition: 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent) !important;
+    }
+
+    .btn-custom {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      border: none;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.35s ease;
+      box-shadow: 0 12px 30px rgba(108, 99, 255, 0.25);
+    }
+
+    .btn-custom:hover {
+      transform: translateY(-2px);
+      color: #fff;
+      box-shadow: 0 18px 35px rgba(108, 99, 255, 0.35);
+    }
+
+    .btn-outline-custom {
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.35s ease;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .btn-outline-custom:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-top: 90px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--accent);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, #ffffff, #9ae6ff, #b19cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.9;
+      max-width: 630px;
+      margin-bottom: 32px;
+    }
+
+    .hero-stats {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .stat-box {
+      padding: 22px;
+      text-align: center;
+    }
+
+    .stat-box h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .stat-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .hero-card {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.35), transparent 70%);
+      top: -40px;
+      right: -40px;
+      border-radius: 50%;
+    }
+
+    .profile-mini {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar {
+      width: 74px;
+      height: 74px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      box-shadow: 0 15px 35px rgba(108, 99, 255, 0.25);
+    }
+
+    .profile-mini h5 {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .profile-mini span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: #dbe3f0;
+    }
+
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+
+    .feature-list i {
+      color: var(--success);
+      font-size: 1.05rem;
+      margin-top: 3px;
+    }
+
+    .about-card,
+    .skill-card,
+    .project-card,
+    .timeline-card,
+    .contact-card {
+      padding: 30px;
+      height: 100%;
+    }
+
+    .about-card p,
+    .contact-card p,
+    .timeline-card p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 25px 0 0;
+    }
+
+    .info-list li {
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .info-list strong {
+      color: #fff;
+      min-width: 115px;
+      display: inline-block;
+    }
+
+    .skill-card h5,
+    .project-card h5,
+    .timeline-card h5,
+    .contact-card h5 {
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .skill-pill {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      margin: 7px 7px 0 0;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #dbe3f0;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    .skill-pill:hover {
+      background: rgba(108, 99, 255, 0.18);
+      border-color: rgba(108, 99, 255, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      transition: 0.35s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: var(--accent);
+      background: rgba(34, 211, 238, 0.12);
+      border: 1px solid rgba(34, 211, 238, 0.15);
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .project-links a {
+      color: #fff;
+      font-weight: 600;
+      margin-right: 18px;
+      transition: 0.3s ease;
+    }
+
+    .project-links a:hover {
+      color: var(--accent);
+    }
+
+    .timeline-card small {
+      display: inline-block;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .cert-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .cert-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: #dfe7f4;
+    }
+
+    .cert-list li:last-child {
+      border-bottom: none;
+    }
+
+    .cert-list span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(108, 99, 255, 0.18);
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 18px;
+    }
+
+    .contact-item {
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      height: 100%;
+    }
+
+    .contact-item a {
+      color: #dfe7f4;
+      word-break: break-word;
+    }
+
+    .contact-item a:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
+    }
+
+    footer p {
+      margin: 0;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 991px) {
+      .hero {
+        padding-top: 120px;
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-mini {
+        justify-content: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .section-padding {
+        padding: 75px 0;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Hemant<span>.</span></a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-custom" href="#contact">Hire Me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="hero-badge reveal">
+            <i class="bi bi-stars"></i>
+            UI/UX Designer | 4+ Years of Experience
+          </div>
+
+          <h1 class="reveal">
+            Crafting <span class="gradient-text">modern digital experiences</span> with usability, clarity, and visual precision.
+          </h1>
+
+          <p class="reveal">
+            I'm <strong>Hemant Srivastava</strong>, a UI/UX Designer focused on building responsive, accessible, and conversion-driven web experiences. I combine design thinking with front-end knowledge in HTML, CSS, JavaScript, and Bootstrap to deliver polished interfaces that users enjoy.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 hero-buttons reveal">
+            <a href="#projects" class="btn btn-custom">View Projects</a>
+            <a href="mailto:hemant.2024p@gmail.com" class="btn btn-outline-custom">Contact Me</a>
+          </div>
+
+          <div class="hero-stats reveal">
+            <div class="glass stat-box">
+              <h3>4+</h3>
+              <p>Years of UI/UX Design Experience</p>
+            </div>
+            <div class="glass stat-box">
+              <h3>2+</h3>
+              <p>Healthcare Projects Delivered</p>
+            </div>
+            <div class="glass stat-box">
+              <h3>100%</h3>
+              <p>Responsive and User-Centered Approach</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="glass hero-card reveal">
+            <div class="profile-mini">
+              <div class="avatar">HS</div>
+              <div>
+                <h5>Hemant Srivastava</h5>
+                <span>UI/UX Designer</span>
+              </div>
+            </div>
+
+            <ul class="feature-list">
+              <li><i class="bi bi-check-circle-fill"></i> Strong expertise in user research, wireframing, prototyping, and usability testing.</li>
+              <li><i class="bi bi-check-circle-fill"></i> Hands-on with HTML5, CSS3, JavaScript, Bootstrap, and design handoff workflows.</li>
+              <li><i class="bi bi-check-circle-fill"></i> Experienced in responsive design, accessibility standards, and cross-browser compatibility.</li>
+              <li><i class="bi bi-check-circle-fill"></i> Collaborative Agile team player delivering pixel-perfect digital interfaces.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <h2 class="section-title reveal">About Me</h2>
+      <p class="section-subtitle reveal">
+        A design professional who blends creativity, structure, and technical understanding to create elegant and functional interfaces for web and mobile platforms.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="glass about-card reveal">
+            <p>
+              I am a <strong>UI/UX Designer</strong> with over 4 years of experience in designing engaging, accessible, and responsive digital products. My work covers the full design lifecycle including user research, information architecture, wireframing, interaction design, prototyping, and usability testing.
+            </p>
+            <br>
+            <p>
+              I work closely with developers and stakeholders to turn business requirements into intuitive product experiences. My front-end knowledge helps me bridge the gap between design and development, ensuring smoother collaboration and more accurate implementation.
+            </p>
+
+            <ul class="info-list">
+              <li><strong>Name:</strong> Hemant Srivastava</li>
+              <li><strong>Location:</strong> Patna</li>
+              <li><strong>Email:</strong> hemant.2024p@gmail.com</li>
+              <li><strong>Phone:</strong> 9992218722</li>
+              <li><strong>Role:</strong> UI/UX Designer</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="glass about-card reveal">
+            <h5 class="mb-3">Education</h5>
+            <p>
+              <strong>RIMT Sonipat</strong><br>
+              Computer Science<br>
+              2016 | Score: 6.65
+            </p>
+
+            <hr class="border-secondary my-4">
+
+            <h5 class="mb-3">Core Focus</h5>
+            <p>
+              User-centered design, modern interface systems, responsive web design, accessibility, performance-aware front-end implementation, and seamless developer handoff.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section-padding" id="skills">
+    <div class="container">
+      <h2 class="section-title reveal">Skills & Tools</h2>
+      <p class="section-subtitle reveal">
+        A balanced mix of design thinking, UI systems, front-end implementation knowledge, and collaboration practices for modern product delivery.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="glass skill-card reveal">
+            <h5>Design Skills</h5>
+            <div>
+              <span class="skill-pill">User Research</span>
+              <span class="skill-pill">Wireframing</span>
+              <span class="skill-pill">Prototyping</span>
+              <span class="skill-pill">Usability Testing</span>
+              <span class="skill-pill">Information Architecture</span>
+              <span class="skill-pill">Interaction Design</span>
+              <span class="skill-pill">Responsive Design</span>
+              <span class="skill-pill">Accessibility</span>
+              <span class="skill-pill">Design Systems</span>
+              <span class="skill-pill">Style Guides</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="glass skill-card reveal">
+            <h5>Tools & Technologies</h5>
+            <div>
+              <span class="skill-pill">Figma</span>
+              <span class="skill-pill">Adobe XD</span>
+              <span class="skill-pill">Adobe Photoshop</span>
+              <span class="skill-pill">Adobe Illustrator</span>
+              <span class="skill-pill">HTML5</span>
+              <span class="skill-pill">CSS3</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">Bootstrap 5</span>
+              <span class="skill-pill">React JS</span>
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">Agile / Scrum</span>
+              <span class="skill-pill">Cross-browser Testing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section-padding" id="projects">
+    <div class="container">
+      <h2 class="section-title reveal">Featured Projects</h2>
+      <p class="section-subtitle reveal">
+        Selected work focused on healthcare experiences, responsive web interfaces, usability improvements, and performance-aware design execution.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="glass project-card reveal">
+            <div class="project-tag">Healthcare Website Redesign</div>
+            <h5>North Atlanta Vascular Clinic</h5>
+            <p>
+              Redesigned and optimized the website for a vascular healthcare provider to improve usability, responsiveness, and performance across all devices. Worked on intuitive layouts, accessibility, image optimization, and clean developer handoff.
+            </p>
+            <p><strong>Tools:</strong> Figma, Adobe XD, HTML5, CSS3, JavaScript, Bootstrap, Git</p>
+            <div class="project-links">
+              <a href="[navascularclinic.com](https://www.navascularclinic.com/)" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Live Website</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="glass project-card reveal">
+            <div class="project-tag">Responsive Medical Platform</div>
+            <h5>Krishna Medical Centre</h5>
+            <p>
+              Designed and developed a modern healthcare website with clear service presentation, responsive page layouts, and performance optimization. Focused on user flows, prototype validation, and pixel-perfect collaboration with developers.
+            </p>
+            <p><strong>Tools:</strong> Figma, Photoshop, HTML5, CSS3, JavaScript, Bootstrap, Git</p>
+            <div class="project-links">
+              <a href="[krishnamedicalcentre.org](https://www.krishnamedicalcentre.org/)" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Live Website</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section-padding" id="experience">
+    <div class="container">
+      <h2 class="section-title reveal">Experience</h2>
+      <p class="section-subtitle reveal">
+        My professional journey combines UI design, UX process thinking, front-end collaboration, and iterative product improvement in Agile environments.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="glass timeline-card reveal">
+            <small>March 2022 - Present</small>
+            <h5>UI/UX Designer</h5>
+            <p><strong>First Bit Digital Technology, Patna</strong></p>
+            <p class="mt-3">
+              Leading UI/UX efforts for responsive and accessible digital products across web and mobile platforms. Involved in research, wireframes, interaction flows, prototypes, usability testing, style guides, and handoff documentation. Collaborates with developers and stakeholders in Agile/Scrum workflows to maintain design quality and implementation accuracy.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="glass timeline-card reveal">
+            <small>Oct 2021 - March 2022</small>
+            <h5>Jr. UI/UX Designer</h5>
+            <p><strong>First Bit Digital Technology, Patna</strong></p>
+            <p class="mt-3">
+              Contributed to responsive interface design, UX planning, wireframing, prototype creation, and collaboration with product and development teams. Built practical understanding of accessibility, usability, business requirement translation, and iterative improvement through feedback cycles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section-padding" id="certifications">
+    <div class="container">
+      <h2 class="section-title reveal">Certifications</h2>
+      <p class="section-subtitle reveal">
+        Professional learning focused on strengthening front-end and JavaScript fundamentals to support better product design and implementation.
+      </p>
+
+      <div class="glass timeline-card reveal">
+        <ul class="cert-list">
+          <li>
+            <div>
+              <strong>React JS</strong><br>
+              <span>HackerRank</span>
+            </div>
+            <span>April 2025</span>
+          </li>
+          <li>
+            <div>
+              <strong>JavaScript</strong><br>
+              <span>HackerRank</span>
+            </div>
+            <span>May 2021</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section-padding" id="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Contact</h2>
+      <p class="section-subtitle reveal">
+        Open to UI/UX design opportunities, freelance work, product collaborations, and responsive website design projects.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="glass contact-card reveal">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+              <h5>Email</h5>
+              <p><a href="mailto:hemant.2024p@gmail.com">hemant.2024p@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="glass contact-card reveal">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="bi bi-telephone"></i></div>
+              <h5>Phone</h5>
+              <p><a href="tel:9992218722">9992218722</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="glass contact-card reveal">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+              <h5>Location</h5>
+              <p>Patna, India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Hemant Srivastava. Designed with HTML, CSS, JavaScript, and Bootstrap 5.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js)"></script>
+
+  <script>
+    // Scroll Reveal Animation
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      reveals.forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        if (top < windowHeight - 80) {
+          el.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    // Active navbar link on scroll
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function setActiveLink() {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", setActiveLink);
+    window.addEventListener("load", setActiveLink);
+  </script>
+</body>
+</html>

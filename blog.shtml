@@ -1,0 +1,106 @@
+<!--#include file="header.shtml" -->
+<section class="section-divider grey-bg pad-80">
+  <div class="container">
+    <div class="text-center">
+      <h1 class="heading m-0">Our Blogs</h1>
+    </div>
+  </div>
+</section>
+<section class="section-divider">
+  <div class="blog_page_main blog_inner_main">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-12">
+          <div class="blog_lists_main_page">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="each_blog_block">
+                  <div class="blog_thumb_image">
+                    <a href="blog-inner.shtml">
+                      <img src="images/blog.jpg" class="img-fluid w-100" alt="Blog Title" />
+                    </a>
+                  </div>
+                  <div class="blog_meta_desc">
+                    <p class="blog_publish_date">June 15, 2022</p>
+                    <p class="blog_category">Dummy Category</p>
+                  </div>
+                  <div class="blog_content">
+                    <a href="blog-inner.shtml">Lorem ipsum dolor sit amet.</a>
+                    <a href="blog-inner.shtml" class="read_more_btn">Read More <i class="fal fa-angle-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="blog_pagination">
+            <ul>
+              <li><a href="!#"><i class="fal fa-angle-double-left"></i></a></li>
+              <li class="active"><a href="!#">1</a></li>
+              <li><a href="!#">2</a></li>
+              <li><a href="!#">3</a></li>
+              <li><a href="!#"><i class="fal fa-angle-double-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="blog_sidebar">
+            <div class="sidebar_each sidebar_search">
+              <h3 class="inner-sub-head">Search</h3>
+              <form action="#">
+                <div class="search_form form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                  <button type="submit" class="search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+              </form>
+            </div>
+            <div class="sidebar_each sidebar_email_subs">
+              <h3 class="inner-sub-head">Subscribe For Updates</h3>
+              <p>Enter your email address:</p>
+              <form action="#">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Enter Your Email ">
+                </div>
+                <a href="#" class="btn-main mt-3">Subscribe</a>
+              </form>
+            </div>
+            <div class="sidebar_each sidebar_social">
+              <h3 class="inner-sub-head">Get Social With Us</h3>
+              <ul class="social-media mt-3">
+                <li><a href="#!" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li><a href="#!" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li><a href="#!" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="sidebar_each sidebar_recent_post">
+              <h3 class="inner-sub-head">Recent Posts</h3>
+              <div class="recent_post_each">
+                <div class="recent_post_img">
+                  <img src="images/blog.jpg" class="img-fluid" alt="blog title" />
+                </div>
+                <div class="recent_post_txt">
+                  <a href="#" target="_blank">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
+                </div>
+              </div>
+            </div>
+            <div class="sidebar_each">
+              <h3 class="inner-sub-head sidebar_archives">Archievs</h3>
+              <select class="form-control form-select" name="blog-category" id="blog-category">
+                <option value="0" selected="" disabled="">Select Archievs</option>
+              </select>
+            </div>
+            <div class="sidebar_each sidebar_categories">
+              <h3 class="inner-sub-head">Categories</h3>
+              <select class="form-control form-select">
+                <option value="" selected="" disabled="">Select Categories</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--#include file="footer.shtml" -->
